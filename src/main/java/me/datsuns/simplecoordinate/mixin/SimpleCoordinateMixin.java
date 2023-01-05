@@ -1,16 +1,30 @@
 package me.datsuns.simplecoordinate.mixin;
 
-import me.datsuns.simplecoordinate.SimpleCoordinate;
-import net.minecraft.client.gui.screen.TitleScreen;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(TitleScreen.class)
+@Mixin(InGameHud.class)
 public class SimpleCoordinateMixin {
-	@Inject(at = @At("HEAD"), method = "init()V")
-	private void init(CallbackInfo info) {
-		SimpleCoordinate.LOGGER.info("This line is printed by an example mod mixin!");
+	@Inject(at = @At("TAIL"), method = "render")
+	public void render(MatrixStack matrixStack, float tickDela, CallbackInfo info){
+		MinecraftClient c = MinecraftClient.getInstance();
+		Entity e = c.getCameraEntity();
+		if( e == null ){
+			return;
+		}
+
+		matrixStack.push();
+		String fmt = String.format("X:%4.1f Y:%4.1f Z:%4.1f", e.getX(), e.getY(), e.getZ());
+		float posX = 5;
+		float posY = 5;
+		//c.textRenderer.drawWithShadow(matrixStack, fmt, posX, posY, 0xFFFFFF);
+		c.textRenderer.draw(matrixStack, fmt, posX, posY, 0xFFFFFF);
+		matrixStack.pop();
 	}
 }
