@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "simplecoordinate",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Simple Coordinate",
+  "description": "display Coordinate on HUD",
   "authors": [
-    "Me!"
+    "datsuns"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/datsuns",
+    "sources": "https://github.com/datsuns/mc-coordinates"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/simplecoordinate/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "me.datsuns.simplecoordinate.SimpleCoordinate"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "simplecoordinate.mixins.json"
   ],
 
   "depends": {
