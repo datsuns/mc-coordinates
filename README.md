@@ -1,8 +1,10 @@
-# Fabric Example Mod
+# Simple Coordinates
+
+simple display for Coordinates on HUD.
 
 ## Setup
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+For setup Fabric environment.
 
 ## License
 
