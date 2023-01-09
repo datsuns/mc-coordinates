@@ -12,11 +12,14 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	maven {
+		name = "CottonMC"
+		url = "https://server.bbkr.space/artifactory/libs-release"
+	}
+	maven {
+		name = "Terraformers"
+		url = "https://maven.terraformersmc.com/releases/"
+	}
 }
 
 dependencies {
@@ -28,10 +31,12 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// Uncomment the following line to enable the deprecated Fabric API modules. 
-	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
+	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
+		transitive = false
+	}
+	modImplementation "io.github.cottonmc.cotton:cotton-config:1.0.0-rc.7"
 
-	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+	include "io.github.cottonmc.cotton:cotton-config:1.0.0-rc.7"
 }
 
 processResources {
