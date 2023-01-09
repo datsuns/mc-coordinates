@@ -13,6 +13,10 @@ group = project.maven_group
 
 repositories {
 	maven {
+		name = "CottonMC"
+		url = "https://server.bbkr.space/artifactory/libs-release"
+	}
+	maven {
 		name = "Terraformers"
 		url = "https://maven.terraformersmc.com/releases/"
 	}
@@ -30,6 +34,9 @@ dependencies {
 	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
 		transitive = false
 	}
+	modImplementation "io.github.cottonmc.cotton:cotton-config:1.0.0-rc.7"
+
+	include "io.github.cottonmc.cotton:cotton-config:1.0.0-rc.7"
 }
 
 processResources {
