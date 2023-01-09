@@ -1,0 +1,16 @@
+{
+  "simplecoordinate.option_title": "Mod Menu Options",
+
+  "option.show_direction.title": "Show Direction",
+  "option.show_direction.true": "Yes",
+  "option.show_direction.false": "No",
+
+  "hud.direction.south":     "south",
+  "hud.direction.southwest": "southwest",
+  "hud.direction.west":      "west",
+  "hud.direction.northwest": "northwest",
+  "hud.direction.north":     "north",
+  "hud.direction.northeast": "northeast",
+  "hud.direction.east":      "east",
+  "hud.direction.southeast": "southeast"
+}

@@ -1,0 +1,16 @@
+{
+  "simplecoordinate.option_title": "Mod Menu Options",
+
+  "option.show_direction.title": "方向を表示",
+  "option.show_direction.true": "する",
+  "option.show_direction.false": "しない",
+
+  "hud.direction.south":     "南",
+  "hud.direction.southwest": "南西",
+  "hud.direction.west":      "西",
+  "hud.direction.northwest": "北西",
+  "hud.direction.north":     "北",
+  "hud.direction.northeast": "北東",
+  "hud.direction.east":      "東",
+  "hud.direction.southeast": "南東"
+}
