@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "me.datsuns.simplecoordinate.SimpleCoordinate"
+    ],
+    "modmenu": [
+      "me.datsuns.simplecoordinate.ModMenuDisplay"
     ]
   },
   "mixins": [
@@ -31,6 +34,9 @@
     "fabric-api": "*",
     "minecraft": "~1.19.3",
     "java": ">=17"
+  },
+  "recommends": {
+    "modmenu": ">=5.0.0"
   },
   "suggests": {
     "another-mod": "*"
