@@ -6,7 +6,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
-import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -27,8 +26,7 @@ public class SimpleCoordinateMixin {
 		if( SimpleCoordinate.Config.ShowDirection ){
 			float yaw = e.getYaw(tickDelta);
 			int index = (int) (Util.yawToDegree(yaw) / 45);
-			String key = SimpleCoordinate.Config.DirectionKeys.get(index);
-			fmt += String.format(" (%s)", Text.translatable(key).getString());
+			fmt += String.format(" (%s)", SimpleCoordinate.DirectionText.get(index).getString());
 		}
 		float posX = 5;
 		float posY = 5;

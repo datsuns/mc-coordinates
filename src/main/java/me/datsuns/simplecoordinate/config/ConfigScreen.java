@@ -16,12 +16,14 @@ public class ConfigScreen extends GameOptionsScreen {
     public final String TRUE;
     public final String FALSE;
 
+
     //@SuppressWarnings("resource")
     public ConfigScreen(Screen previous) {
         super(previous, MinecraftClient.getInstance().options, Text.translatable("simplecoordinate.option_title"));
         this.previous = previous;
         this.TRUE  = "§a" + Text.translatable("option.show_direction.true").getString();
         this.FALSE = "§c" + Text.translatable("option.show_direction.false").getString();
+
     }
 
     protected Text buildButtonTitle(String key, boolean value) {
