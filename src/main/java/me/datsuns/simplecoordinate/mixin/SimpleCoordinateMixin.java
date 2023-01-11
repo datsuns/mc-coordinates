@@ -15,6 +15,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class SimpleCoordinateMixin {
 	@Inject(at = @At("TAIL"), method = "render")
 	public void render(MatrixStack matrixStack, float tickDelta, CallbackInfo info){
+		if( !SimpleCoordinate.Config.Visible ){
+			return;
+		}
 		MinecraftClient c = MinecraftClient.getInstance();
 		Entity e = c.getCameraEntity();
 		if( e == null ){

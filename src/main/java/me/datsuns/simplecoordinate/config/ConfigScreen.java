@@ -21,8 +21,8 @@ public class ConfigScreen extends GameOptionsScreen {
     public ConfigScreen(Screen previous) {
         super(previous, MinecraftClient.getInstance().options, Text.translatable("simplecoordinate.option_title"));
         this.previous = previous;
-        this.TRUE  = "§a" + Text.translatable("option.show_direction.true").getString();
-        this.FALSE = "§c" + Text.translatable("option.show_direction.false").getString();
+        this.TRUE  = "§a" + Text.translatable("option.true").getString();
+        this.FALSE = "§c" + Text.translatable("option.false").getString();
 
     }
 
@@ -33,16 +33,19 @@ public class ConfigScreen extends GameOptionsScreen {
 
     protected void init() {
         super.init();
+        this.addDrawableChild(new ButtonWidget.Builder(buildButtonTitle("option.visible.title", SimpleCoordinate.Config.Visible), (button) -> {
+            SimpleCoordinate.Config.Visible = !SimpleCoordinate.Config.Visible;
+            button.setMessage(buildButtonTitle("option.visible.title", SimpleCoordinate.Config.Visible));
+            ConfigManager.saveConfig(SimpleCoordinate.Config);
+        }).position(this.width / 2 - 100, 20).size(200, 20).build());
         this.addDrawableChild(new ButtonWidget.Builder(buildButtonTitle("option.show_direction.title", SimpleCoordinate.Config.ShowDirection), (button) -> {
             SimpleCoordinate.Config.ShowDirection = !SimpleCoordinate.Config.ShowDirection;
             button.setMessage(buildButtonTitle("option.show_direction.title", SimpleCoordinate.Config.ShowDirection));
             ConfigManager.saveConfig(SimpleCoordinate.Config);
-        }).position(this.width / 2 - 100, 20)
-                .size(200, 20)
-                .build());
-        this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, (button) -> this.client.setScreen(this.previous)).position(this.width / 2 - 100, this.height - 27)
-                .size(200, 20)
-                .build());
+        }).position(this.width / 2 - 100, 40).size(200, 20).build());
+
+        this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, (button) -> this.client.setScreen(this.previous))
+                .position(this.width / 2 - 100, this.height - 27).size(200, 20).build());
     }
 
     @Override

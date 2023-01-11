@@ -1,9 +1,13 @@
 {
   "simplecoordinate.option_title": "Mod Menu Options",
+  "category.simplecoordinate": "Simple Coordinate",
 
+  "key.simplecorrdinate.visible": "表示切り替え",
+
+  "option.true": "する",
+  "option.false": "しない",
+  "option.visible.title": "表示する",
   "option.show_direction.title": "方向を表示",
-  "option.show_direction.true": "する",
-  "option.show_direction.false": "しない",
 
   "hud.direction.south":     "南",
   "hud.direction.southwest": "南西",

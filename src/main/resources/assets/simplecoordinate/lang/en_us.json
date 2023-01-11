@@ -1,9 +1,13 @@
 {
   "simplecoordinate.option_title": "Mod Menu Options",
+  "category.simplecoordinate": "Simple Coordinate",
 
+  "key.simplecorrdinate.visible": "Visible",
+
+  "option.true": "Yes",
+  "option.false": "No",
+  "option.visible.title": "Show Coodinate",
   "option.show_direction.title": "Show Direction",
-  "option.show_direction.true": "Yes",
-  "option.show_direction.false": "No",
 
   "hud.direction.south":     "south",
   "hud.direction.southwest": "southwest",

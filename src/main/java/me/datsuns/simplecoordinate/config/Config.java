@@ -5,5 +5,6 @@ import me.datsuns.simplecoordinate.SimpleCoordinate;
 
 @ConfigFile(name = "./" + SimpleCoordinate.MOD_ID, extension = ".json")
 public class Config {
+    public Boolean Visible = true;
     public Boolean ShowDirection = false;
 }
