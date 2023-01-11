@@ -2,6 +2,7 @@ package me.datsuns.simplecoordinate.mixin;
 
 import me.datsuns.simplecoordinate.SimpleCoordinate;
 import me.datsuns.simplecoordinate.Util;
+import me.datsuns.simplecoordinate.config.KeyBinding;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
@@ -15,6 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class SimpleCoordinateMixin {
 	@Inject(at = @At("TAIL"), method = "render")
 	public void render(MatrixStack matrixStack, float tickDelta, CallbackInfo info){
+		KeyBinding.tick();
+
 		if( !SimpleCoordinate.Config.Visible ){
 			return;
 		}

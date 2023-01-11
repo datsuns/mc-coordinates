@@ -2,6 +2,7 @@ package me.datsuns.simplecoordinate;
 
 import io.github.cottonmc.cotton.config.ConfigManager;
 import me.datsuns.simplecoordinate.config.Config;
+import me.datsuns.simplecoordinate.config.KeyBinding;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.text.Text;
 import org.slf4j.Logger;
@@ -37,6 +38,8 @@ public class SimpleCoordinate implements ModInitializer {
 		this.DirectionText.add(Text.translatable("hud.direction.northeast"));
 		this.DirectionText.add(Text.translatable("hud.direction.east"));
 		this.DirectionText.add(Text.translatable("hud.direction.southeast"));
+
+		KeyBinding.initialize();
 
 		LOGGER.info("Hello Fabric world!");
 	}
