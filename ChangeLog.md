@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v1.2.0
+- new feature:
+    - config to toggle visible
+    - keybinding for toggle option
+
 ## v1.1.1
 - bugfix: remove unused variables from Config
 
