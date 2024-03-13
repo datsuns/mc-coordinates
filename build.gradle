@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
+	id "com.modrinth.minotaur" version "2.+"
 }
 
 version = project.mod_version
@@ -16,7 +17,15 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven {
+		name = "Terraformers"
+		url = "https://maven.terraformersmc.com/releases/"
+	}
+	// for Cloth Config
+	maven { url "https://maven.shedaniel.me/" }
+	maven { url "https://maven.terraformersmc.com/releases/" }
 }
+
 
 loom {
     splitEnvironmentSourceSets()
@@ -43,6 +52,12 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
+		transitive = false
+	}
+	modApi("me.shedaniel.cloth:cloth-config-fabric:10.1.117") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 }
 
 processResources {
@@ -88,4 +103,18 @@ publishing {
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
 	}
+}
+
+import com.modrinth.minotaur.dependencies.ModDependency
+modrinth {
+	token = System.getenv('MODRINTH_TOKEN') // Please use an environment variable for this! The default is `$MODRINTH_TOKEN`.
+	projectId = "${project.modrinth_project_id}" // The ID of your Modrinth project. Slugs will not work.
+	versionNumber = "${project.mod_version}" // The (preferably SemVer) version of the mod. If not specified, it'll use the `version` declaration
+	versionName = "${project.mod_version}"  // The version title. If not specified, it'll use the version number
+	uploadFile = remapJar // Tells Minotaur to use the remapped jar
+	gameVersions = ['1.19.3'] // An array of game versions the version supports
+	loaders = ['fabric'] // Self-explanatory.
+	dependencies = [
+			new ModDependency('P7dR8mSH', 'required') // Creates a new required dependency on Fabric API
+	]
 }
