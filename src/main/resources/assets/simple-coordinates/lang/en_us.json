@@ -4,7 +4,7 @@
   "key.simplecorrdinate.visible": "Visible",
   "option.true": "Yes",
   "option.false": "No",
-  "option.visible.title": "Show Coodinate",
+  "option.visible.title": "Show Coordinate",
   "option.show_direction.title": "Show Direction",
   "hud.direction.south": "south",
   "hud.direction.southwest": "southwest",
@@ -13,5 +13,6 @@
   "hud.direction.north": "north",
   "hud.direction.northeast": "northeast",
   "hud.direction.east": "east",
-  "hud.direction.southeast": "southeast"
+  "hud.direction.southeast": "southeast",
+  "option.show_angle.title": "Show Angle"
 }

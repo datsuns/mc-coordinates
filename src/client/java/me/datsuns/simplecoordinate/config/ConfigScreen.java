@@ -48,6 +48,11 @@ public class ConfigScreen extends GameOptionsScreen {
             button.setMessage(buildButtonTitle("option.show_direction.title", SimpleCoordinatesClient.ModConfig.ShowDirection));
             AutoConfig.getConfigHolder(ModConfig.class).save();
         }).position(this.width / 2 - 100, 40).size(200, 20).build());
+        this.addDrawableChild(new ButtonWidget.Builder(buildButtonTitle("option.show_angle.title", SimpleCoordinatesClient.ModConfig.ShowAngle), (button) -> {
+            SimpleCoordinatesClient.ModConfig.ShowAngle = !SimpleCoordinatesClient.ModConfig.ShowAngle;
+            button.setMessage(buildButtonTitle("option.show_angle.title", SimpleCoordinatesClient.ModConfig.ShowAngle));
+            AutoConfig.getConfigHolder(ModConfig.class).save();
+        }).position(this.width / 2 - 100, 60).size(200, 20).build());
 
         this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, (button) -> this.client.setScreen(this.previous))
                 .position(this.width / 2 - 100, this.height - 27).size(200, 20).build());

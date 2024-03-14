@@ -1,6 +1,6 @@
 座標表示プラグイン
 
-![capture image](./image/screenshot.png)
+![capture image](./image/screenshot.ja.png)
 
 # インストール
 
@@ -10,5 +10,6 @@
 # その他
 
 [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/) で設定変更が可能です
-* 方向表示on/off
+* 方角表示on/off
+* 方向/目線の角度on/off
 * [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)と合わせてインストールしてください
