@@ -4,6 +4,7 @@ import me.datsuns.simplecoordinate.SimpleCoordinatesClient;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -53,8 +54,8 @@ public class ConfigScreen extends GameOptionsScreen {
     }
 
     @Override
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        this.renderBackground(matrices);
-        super.render(matrices, mouseX, mouseY, delta);
+    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        this.renderBackground(context, mouseX, mouseY, delta);
+        super.render(context, mouseX, mouseY, delta);
     }
 }
