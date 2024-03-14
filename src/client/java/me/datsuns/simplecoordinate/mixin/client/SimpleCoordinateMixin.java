@@ -32,9 +32,17 @@ public class SimpleCoordinateMixin {
             int index = (int) (Util.yawToDegree(yaw) / 45);
             fmt += String.format(" (%s)", SimpleCoordinatesClient.DirectionText.get(index).getString());
         }
-        float posX = 5;
-        float posY = 5;
+        if (SimpleCoordinatesClient.ModConfig.ShowAngle) {
+            float degree = Util.yawToDegree(e.getYaw());
+            float pitch = e.getPitch();
+            if (degree > 180 ){
+                degree -= 360.0;
+            }
+            fmt += String.format(" (%3.1f/%3.1f)", degree, pitch);
+        }
+        int posX = 5;
+        int posY = 5;
         //c.textRenderer.drawWithShadow(matrixStack, fmt, posX, posY, 0xFFFFFF);
-        context.drawText(c.textRenderer, fmt, (int) posX, (int) posY, 0xFFFFFF, false);
+        context.drawText(c.textRenderer, fmt, posX, posY, 0xFFFFFF, false);
     }
 }
