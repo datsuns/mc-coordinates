@@ -1,5 +1,9 @@
 # ChangeLog
 
+## v1.3.0
+- new feature:
+    - show yaw/pitch
+
 ## v1.2.0
 - new feature:
     - config to toggle visible
