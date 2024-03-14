@@ -2,6 +2,7 @@ package me.datsuns.simplecoordinate.mixin.client;
 
 import me.datsuns.simplecoordinate.SimpleCoordinatesClient;
 import me.datsuns.simplecoordinate.Util;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.MinecraftClient;
@@ -15,8 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(InGameHud.class)
 public class SimpleCoordinateMixin {
     @Inject(at = @At("TAIL"), method = "render")
-    public void render(MatrixStack matrixStack, float tickDelta, CallbackInfo info) {
-        if (!SimpleCoordinatesClient.ModConfig.Visible) {
+    public void render(DrawContext context, float tickDelta, CallbackInfo info) throws Exception {
+            if (!SimpleCoordinatesClient.ModConfig.Visible) {
             return;
         }
         MinecraftClient c = MinecraftClient.getInstance();
@@ -25,7 +26,6 @@ public class SimpleCoordinateMixin {
             return;
         }
 
-        matrixStack.push();
         String fmt = String.format("X:%4.1f Y:%4.1f Z:%4.1f", e.getX(), e.getY(), e.getZ());
         if (SimpleCoordinatesClient.ModConfig.ShowDirection) {
             float yaw = e.getYaw(tickDelta);
@@ -35,9 +35,6 @@ public class SimpleCoordinateMixin {
         float posX = 5;
         float posY = 5;
         //c.textRenderer.drawWithShadow(matrixStack, fmt, posX, posY, 0xFFFFFF);
-        c.textRenderer.draw(matrixStack, fmt, posX, posY, 0xFFFFFF);
-
-        matrixStack.pop();
-
+        context.drawText(c.textRenderer, fmt, (int) posX, (int)posY, 0xFFFFFF, false);
     }
 }
