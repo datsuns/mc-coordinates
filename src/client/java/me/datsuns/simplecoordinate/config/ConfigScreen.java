@@ -26,7 +26,7 @@ public class ConfigScreen extends GameOptionsScreen {
     public ConfigScreen(Screen previous) {
         super(previous, MinecraftClient.getInstance().options, Text.translatable("simplecoordinate.option_title"));
         this.previous = previous;
-        this.TRUE  = "§a" + Text.translatable("option.true").getString();
+        this.TRUE = "§a" + Text.translatable("option.true").getString();
         this.FALSE = "§c" + Text.translatable("option.false").getString();
 
     }
