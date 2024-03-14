@@ -1,48 +1,48 @@
 {
-	"schemaVersion": 1,
-	"id": "simple-coordinates",
-	"version": "${version}",
-	"name": "Simple Coordinates",
-	"description": "display Coordinate on HUD",
-	"authors": [
-		"datsuns"
-	],
-	"contact": {
-		"homepage": "https://github.com/datsuns",
-		"sources": "https://github.com/datsuns/mc-coordinates"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/simple-coordinates/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"me.datsuns.simplecoordinate.SimpleCoordinates"
-		],
-		"client": [
-			"me.datsuns.simplecoordinate.SimpleCoordinatesClient"
-		],
-		"modmenu": [
-			"me.datsuns.simplecoordinate.ModMenuDisplay"
-		]
-	},
-	"mixins": [
-		"simple-coordinates.mixins.json",
-		{
-			"config": "simple-coordinates.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.15.7",
-		"minecraft": "~1.20.4",
-		"java": ">=17",
-		"fabric-api": "*",
-		"fabric-key-binding-api-v1": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	},
-	"recommends": {
-		"modmenu": ">=9.0.0"
-	}
+  "schemaVersion": 1,
+  "id": "simple-coordinates",
+  "version": "${version}",
+  "name": "Simple Coordinates",
+  "description": "display Coordinate on HUD",
+  "authors": [
+    "datsuns"
+  ],
+  "contact": {
+    "homepage": "https://github.com/datsuns",
+    "sources": "https://github.com/datsuns/mc-coordinates"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/simple-coordinates/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.datsuns.simplecoordinate.SimpleCoordinates"
+    ],
+    "client": [
+      "me.datsuns.simplecoordinate.SimpleCoordinatesClient"
+    ],
+    "modmenu": [
+      "me.datsuns.simplecoordinate.ModMenuDisplay"
+    ]
+  },
+  "mixins": [
+    "simple-coordinates.mixins.json",
+    {
+      "config": "simple-coordinates.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.7",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*",
+    "fabric-key-binding-api-v1": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  },
+  "recommends": {
+    "modmenu": ">=9.0.0"
+  }
 }
