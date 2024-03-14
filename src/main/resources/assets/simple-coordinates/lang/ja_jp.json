@@ -13,5 +13,6 @@
   "hud.direction.north": "北",
   "hud.direction.northeast": "北東",
   "hud.direction.east": "東",
-  "hud.direction.southeast": "南東"
+  "hud.direction.southeast": "南東",
+  "option.show_angle.title": "角度を表示"
 }
