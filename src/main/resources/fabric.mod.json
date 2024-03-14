@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "simple-coordinates",
 	"version": "${version}",
-	"name": "Example mod",
+	"name": "Simple Coordinates",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
@@ -12,20 +12,20 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/simple-coordinates/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"me.datsuns.simplecoordinate.SimpleCoordinates"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"me.datsuns.simplecoordinate.SimpleCoordinatesClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"simple-coordinates.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "simple-coordinates.client.mixins.json",
 			"environment": "client"
 		}
 	],
