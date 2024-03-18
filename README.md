@@ -1,5 +1,8 @@
 # Simple Coordinates
 
+[![Automatic Build](https://github.com/datsuns/mc-coordinates/actions/workflows/build.yml/badge.svg)](https://github.com/datsuns/mc-coordinates/actions/workflows/build.yml)
+[![Modrinth downloads](https://img.shields.io/modrinth/dt/OT4jnFfV?logo=modrinth&label=Modrinth&color=2200FF)](https://modrinth.com/mod/simple-coordinate)
+
 simple display for Coordinates on HUD.
 
 ![capture image](./image/screenshot.png)
