@@ -54,8 +54,13 @@ public class ConfigScreen extends GameOptionsScreen {
             AutoConfig.getConfigHolder(ModConfig.class).save();
         }).position(this.width / 2 - 100, 60).size(200, 20).build());
 
-        this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, (button) -> this.client.setScreen(this.previous))
-                .position(this.width / 2 - 100, this.height - 27).size(200, 20).build());
+        //this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, (button) -> this.client.setScreen(this.previous))
+        //        .position(this.width / 2 - 100, this.height - 27).size(200, 20).build());
+    }
+
+    @Override
+    protected void addOptions() {
+
     }
 
     @Override
