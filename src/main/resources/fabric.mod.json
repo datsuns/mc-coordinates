@@ -3,13 +3,13 @@
 	"id": "simple-coordinates",
 	"version": "${version}",
 	"name": "Simple Coordinates",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "display Coordinate on HUD",
 	"authors": [
-		"Me!"
+		"datsuns"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/datsuns",
+		"sources": "https://github.com/datsuns/mc-coordinates"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/simple-coordinates/icon.png",
@@ -20,6 +20,9 @@
 		],
 		"client": [
 			"me.datsuns.simplecoordinate.SimpleCoordinatesClient"
+		],
+		"modmenu": [
+			"me.datsuns.simplecoordinate.ModMenuDisplay"
 		]
 	},
 	"mixins": [
@@ -33,9 +36,13 @@
 		"fabricloader": ">=0.16.10",
 		"minecraft": "~1.21.5",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"fabric-key-binding-api-v1": "*"
 	},
 	"suggests": {
 		"another-mod": "*"
+	},
+	"recommends": {
+		"modmenu": ">=9.0.0"
 	}
 }

@@ -3,7 +3,7 @@
 	"package": "me.datsuns.simplecoordinate.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ExampleClientMixin"
+		"SimpleCoordinateMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
