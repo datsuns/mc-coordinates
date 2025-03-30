@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v1.3.1
+- change:
+    - config screen style
+- fetch to MC 1.21.5
+
 ## v1.3.0
 - new feature:
     - show yaw/pitch
