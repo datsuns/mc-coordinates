@@ -43,7 +43,7 @@
 		"another-mod": "*"
 	},
 	"recommends": {
-		"modmenu": ">=10.0.0",
+		"modmenu": ">=14.0.0",
 		"cloth-config": ">=15.0.0"
 	}
 }
