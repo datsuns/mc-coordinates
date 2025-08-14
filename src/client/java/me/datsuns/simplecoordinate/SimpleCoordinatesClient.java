@@ -2,10 +2,14 @@ package me.datsuns.simplecoordinate;
 
 import me.datsuns.simplecoordinate.config.ModKeyBinding;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 import me.datsuns.simplecoordinate.config.ModConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+import net.minecraft.util.Colors;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +37,8 @@ public class SimpleCoordinatesClient implements ClientModInitializer {
 
         AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
         this.ModConfig = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
+        HudElementRegistry.addLast(Identifier.of("simple-coordinates", "render"), new CoordinateRenderer());
 
         this.keyBinding = new ModKeyBinding();
         this.keyBinding.initialize();
