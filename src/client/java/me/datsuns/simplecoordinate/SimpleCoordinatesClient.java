@@ -25,18 +25,18 @@ public class SimpleCoordinatesClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         // This entrypoint is suitable for setting up client-specific logic, such as rendering.
-        this.DirectionText.clear();
-        this.DirectionText.add(Text.translatable("hud.direction.south"));
-        this.DirectionText.add(Text.translatable("hud.direction.southwest"));
-        this.DirectionText.add(Text.translatable("hud.direction.west"));
-        this.DirectionText.add(Text.translatable("hud.direction.northwest"));
-        this.DirectionText.add(Text.translatable("hud.direction.north"));
-        this.DirectionText.add(Text.translatable("hud.direction.northeast"));
-        this.DirectionText.add(Text.translatable("hud.direction.east"));
-        this.DirectionText.add(Text.translatable("hud.direction.southeast"));
+        DirectionText.clear();
+        DirectionText.add(Text.translatable("hud.direction.south"));
+        DirectionText.add(Text.translatable("hud.direction.southwest"));
+        DirectionText.add(Text.translatable("hud.direction.west"));
+        DirectionText.add(Text.translatable("hud.direction.northwest"));
+        DirectionText.add(Text.translatable("hud.direction.north"));
+        DirectionText.add(Text.translatable("hud.direction.northeast"));
+        DirectionText.add(Text.translatable("hud.direction.east"));
+        DirectionText.add(Text.translatable("hud.direction.southeast"));
 
         AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
-        this.ModConfig = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        ModConfig = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
         HudElementRegistry.addLast(Identifier.of("simple-coordinates", "render"), new CoordinateRenderer());
 
