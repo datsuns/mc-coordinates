@@ -120,6 +120,6 @@ modrinth {
 	dependencies = [
 			new ModDependency('P7dR8mSH', 'required'), // Creates a new required dependency on Fabric API
 			new ModDependency('9s6osm5g', 'required'), // Creates a new required dependency for cloth-config
-			new ModDependency('T7GjZmwP', 'required') // Creates a new required dependency for Modmenu
+			new ModDependency('mOgUt4GM', 'required') // Creates a new required dependency for Modmenu
 	]
 }
