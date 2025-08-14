@@ -1,5 +1,9 @@
 # 変更履歴
 
+## v1.3.1 for v1.21.8
+- Minecraft v1.21.8対応
+  - HUD描画をHudElementRegistry構造に変更(fabric v1.21.6)
+
 ## v1.3.1
 - 変更
     - 設定画面の作り方を変更

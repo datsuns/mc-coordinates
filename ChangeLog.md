@@ -1,5 +1,9 @@
 # ChangeLog
 
+## v1.3.1 for v1.21.8
+- fetch to MC 1.21.8
+  - change HUD rendering by HudElementRegistry. (w/ fabric v1.21.6)
+
 ## v1.3.1
 - change:
     - config screen style
