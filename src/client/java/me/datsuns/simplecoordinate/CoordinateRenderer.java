@@ -33,8 +33,8 @@ public class CoordinateRenderer implements HudElement {
             }
             fmt += String.format(" (%3.1f/%3.1f)", degree, pitch);
         }
-        int posX = 10;
-        int posY = 10;
+        int posX = 5;
+        int posY = 5;
         //c.textRenderer.drawWithShadow(matrixStack, fmt, posX, posY, 0xFFFFFF);
         drawContext.drawText(c.textRenderer, fmt, posX, posY, Colors.WHITE, false);
 
