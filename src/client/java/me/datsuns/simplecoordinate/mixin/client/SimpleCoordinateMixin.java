@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class SimpleCoordinateMixin {
     @Inject(at = @At("TAIL"), method = "render")
     public void render(DrawContext context, float tickDelta, CallbackInfo info) throws Exception {
-            if (!SimpleCoordinatesClient.ModConfig.Visible) {
+        if (!SimpleCoordinatesClient.ModConfig.Visible) {
             return;
         }
         MinecraftClient c = MinecraftClient.getInstance();
@@ -35,6 +35,6 @@ public class SimpleCoordinateMixin {
         float posX = 5;
         float posY = 5;
         //c.textRenderer.drawWithShadow(matrixStack, fmt, posX, posY, 0xFFFFFF);
-        context.drawText(c.textRenderer, fmt, (int) posX, (int)posY, 0xFFFFFF, false);
+        context.drawText(c.textRenderer, fmt, (int) posX, (int) posY, 0xFFFFFF, false);
     }
 }
