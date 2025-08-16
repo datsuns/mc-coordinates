@@ -1,5 +1,10 @@
 # 変更履歴
 
+## v1.4.0 for v1.21.8
+- 以下の設定項目を追加
+  - 表示位置
+  - 文字色
+
 ## v1.3.1 for v1.21.8
 - Minecraft v1.21.8対応
   - HUD描画をHudElementRegistry構造に変更(fabric v1.21.6)

@@ -14,7 +14,10 @@ For setup Fabric environment.
 ## feature
 
 * show coordination, direction, angle, pitch
-* toggle on/off by [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/) 
+* config by [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/) 
+   * toggle on/off
+   * rendering position
+   * text color
 
 ## dependencies 
 * [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/)

@@ -10,6 +10,8 @@
 # その他
 
 [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/) で設定変更が可能です
+* 表示位置
+* 文字色
 * 方角表示on/off
 * 方向/目線の角度on/off
 * [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)と合わせてインストールしてください
