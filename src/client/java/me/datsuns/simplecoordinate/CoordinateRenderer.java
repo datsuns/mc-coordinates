@@ -33,10 +33,11 @@ public class CoordinateRenderer implements HudElement {
             }
             fmt += String.format(" (%3.1f/%3.1f)", degree, pitch);
         }
-        int posX = 5;
-        int posY = 5;
+        int posX  = SimpleCoordinatesClient.ModConfig.RenderPosX;
+        int posY  = SimpleCoordinatesClient.ModConfig.RenderPosY;
+        int color = SimpleCoordinatesClient.ModConfig.TextColor.argb;
         //c.textRenderer.drawWithShadow(matrixStack, fmt, posX, posY, 0xFFFFFF);
-        drawContext.drawText(c.textRenderer, fmt, posX, posY, Colors.WHITE, false);
+        drawContext.drawText(c.textRenderer, fmt, posX, posY, color, false);
 
     }
 }

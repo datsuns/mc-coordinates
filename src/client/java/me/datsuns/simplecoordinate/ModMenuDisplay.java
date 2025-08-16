@@ -2,6 +2,7 @@ package me.datsuns.simplecoordinate;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
+import me.datsuns.simplecoordinate.config.ColorConfig;
 import me.datsuns.simplecoordinate.config.ModConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
@@ -9,6 +10,7 @@ import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -30,6 +32,9 @@ public class ModMenuDisplay implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> {
+            MinecraftClient mc = MinecraftClient.getInstance();
+            int max_x = mc.getWindow().getScaledWidth();
+            int max_y = mc.getWindow().getScaledHeight();
             ConfigBuilder builder = ConfigBuilder.create()
                     .setParentScreen(parent)
                     .setTitle(Text.translatable("simplecoordinate.option_title"));
@@ -37,6 +42,26 @@ public class ModMenuDisplay implements ModMenuApi {
             ConfigCategory category = builder.getOrCreateCategory(Text.translatable("category.simplecoordinate"));
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
             YesNoText yesno = new YesNoText();
+
+            category.addEntry(entryBuilder
+                    .startIntSlider(optionTitle("option.pos_x.title"), SimpleCoordinatesClient.ModConfig.RenderPosX, 0, max_x)
+                    .setDefaultValue(SimpleCoordinatesClient.ModConfig.RenderPosX)
+                    .setTextGetter(v -> Text.translatable("option.pos_xy.value", v))
+                    .setSaveConsumer(integer -> SimpleCoordinatesClient.ModConfig.RenderPosX = integer)
+                    .build());
+
+            category.addEntry(entryBuilder
+                    .startIntSlider(optionTitle("option.pos_y.title"), SimpleCoordinatesClient.ModConfig.RenderPosY, 0, max_y)
+                    .setDefaultValue(SimpleCoordinatesClient.ModConfig.RenderPosY)
+                    .setTextGetter(v -> Text.translatable("option.pos_xy.value", v))
+                    .setSaveConsumer(integer -> SimpleCoordinatesClient.ModConfig.RenderPosY = integer)
+                    .build());
+
+            category.addEntry(entryBuilder
+                    .startEnumSelector(optionTitle("option.text_color.title"), ColorConfig.class, SimpleCoordinatesClient.ModConfig.TextColor)
+                    .setEnumNameProvider(e -> ColorConfig.valueOf(String.valueOf(e)).label)
+                    .setSaveConsumer(color -> SimpleCoordinatesClient.ModConfig.TextColor = color)
+                    .build());
 
             category.addEntry(entryBuilder
                     .startBooleanToggle(optionTitle("option.visible.title"), SimpleCoordinatesClient.ModConfig.Visible)
