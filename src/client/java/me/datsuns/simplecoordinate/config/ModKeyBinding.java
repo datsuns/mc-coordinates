@@ -16,7 +16,7 @@ public class ModKeyBinding {
                         "key.simplecorrdinate.visible",
                         InputUtil.Type.KEYSYM,
                         GLFW.GLFW_KEY_COMMA,
-                        KeyBinding.MISC_CATEGORY
+                        KeyBinding.Category.MISC
                 )
         );
         SimpleCoordinatesClient.LOGGER.info("register key : {}", Visible);
@@ -28,4 +28,3 @@ public class ModKeyBinding {
         });
     }
 }
-

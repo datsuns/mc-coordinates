@@ -33,8 +33,8 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.8",
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.10",
 		"java": ">=21",
 		"fabric-api": "*",
 		"fabric-key-binding-api-v1": "*"
@@ -43,7 +43,7 @@
 		"another-mod": "*"
 	},
 	"recommends": {
-		"modmenu": ">=15.0.0",
-		"cloth-config": ">=19.0.0"
+		"modmenu": ">=16.0.0-rc.1",
+		"cloth-config": ">=20.0.148"
 	}
 }
