@@ -15,3 +15,7 @@
 * 方角表示on/off
 * 方向/目線の角度on/off
 * [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)と合わせてインストールしてください
+
+# ビルド
+
+Fabric版のビルドは `./gradlew :fabric:build` を実行してください。

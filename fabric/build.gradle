@@ -1,0 +1,104 @@
+import com.modrinth.minotaur.dependencies.ModDependency
+
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+    id "com.modrinth.minotaur" version "2.+"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+sourceSets {
+    main {
+        resources.srcDir(project(":common").file("src/main/resources"))
+    }
+}
+
+repositories {
+    maven {
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/releases/"
+    }
+    maven { url "https://maven.shedaniel.me/" }
+}
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        "simple-coordinates" {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+dependencies {
+    implementation project(':common')
+
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
+        transitive = false
+    }
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_api_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": inputs.properties.version
+    }
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+tasks.named("jar").configure {
+    dependsOn(":common:classes")
+    from(project(":common").sourceSets.main.output.classesDirs)
+
+    inputs.property "archivesName", project.base.archivesName
+    from(rootProject.file("LICENSE")) {
+        rename { "${it}_${inputs.properties.archivesName}" }
+    }
+}
+
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            artifactId = project.archives_base_name
+            from components.java
+        }
+    }
+}
+
+modrinth {
+    token = System.getenv('MODRINTH_TOKEN')
+    projectId = "${project.modrinth_project_id}"
+    versionNumber = "${project.mod_version}"
+    versionName = "v${project.mod_version}-mc${project.minecraft_version}"
+    uploadFile = remapJar
+    gameVersions = ['1.21.10']
+    loaders = ['fabric']
+    dependencies = [
+            new ModDependency('P7dR8mSH', 'required'),
+            new ModDependency('9s6osm5g', 'required'),
+            new ModDependency('mOgUt4GM', 'required')
+    ]
+}

@@ -59,7 +59,12 @@ public class ModMenuDisplay implements ModMenuApi {
 
             category.addEntry(entryBuilder
                     .startEnumSelector(optionTitle("option.text_color.title"), ColorConfig.class, SimpleCoordinatesClient.ModConfig.TextColor)
-                    .setEnumNameProvider(e -> ColorConfig.valueOf(String.valueOf(e)).label)
+                    .setEnumNameProvider(entry -> {
+                        ColorConfig color = (ColorConfig) entry;
+                        return Text.literal("")
+                                .append(Text.translatable(color.translationKey())
+                                        .setStyle(Style.EMPTY.withBold(true).withColor(color.argb)));
+                    })
                     .setSaveConsumer(color -> SimpleCoordinatesClient.ModConfig.TextColor = color)
                     .build());
 
