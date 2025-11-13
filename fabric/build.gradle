@@ -102,7 +102,7 @@ modrinth {
     token = System.getenv('MODRINTH_TOKEN')
     projectId = "${project.modrinth_project_id}"
     versionNumber = "${project.mod_version}"
-    versionName = "v${project.mod_version}-mc${project.minecraft_version}"
+    versionName = "v${project.mod_version}-mc${project.minecraft_version}-fabric"
     uploadFile = remapJar
     gameVersions = ['1.21.10']
     loaders = ['fabric']
