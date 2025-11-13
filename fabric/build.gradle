@@ -79,6 +79,14 @@ tasks.named("jar").configure {
     }
 }
 
+tasks.named("remapJar").configure {
+    archiveFileName.set("simple-coordinates-${project.version}-fabric.jar")
+}
+
+tasks.named("remapSourcesJar").configure {
+    archiveFileName.set("simple-coordinates-${project.version}-fabric-sources.jar")
+}
+
 publishing {
     publications {
         create("mavenJava", MavenPublication) {
