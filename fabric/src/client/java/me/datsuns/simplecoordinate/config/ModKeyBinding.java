@@ -13,7 +13,7 @@ public class ModKeyBinding {
     public void initialize() {
         Visible = KeyBindingHelper.registerKeyBinding(
                 new KeyBinding(
-                        "key.simplecorrdinate.visible",
+                        "key.simplecoordinate.visible",
                         InputUtil.Type.KEYSYM,
                         GLFW.GLFW_KEY_COMMA,
                         KeyBinding.Category.MISC

@@ -1,5 +1,6 @@
 package me.datsuns.simplecoordinate;
 
+import me.datsuns.simplecoordinate.DirectionKeys;
 import me.datsuns.simplecoordinate.config.ModKeyBinding;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
@@ -16,8 +17,8 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 
 public class SimpleCoordinatesClient implements ClientModInitializer {
-    public static final String MOD_ID = "SimpleCoordinate";
-    public static final Logger LOGGER = LoggerFactory.getLogger("simple-coordinates");
+    public static final String MOD_ID = SimpleCoordinates.MOD_ID;
+    public static final Logger LOGGER = LoggerFactory.getLogger(SimpleCoordinates.MOD_ID);
     public static ModConfig ModConfig;
     public static ArrayList<Text> DirectionText = new ArrayList<>();
     private ModKeyBinding keyBinding;
@@ -26,19 +27,14 @@ public class SimpleCoordinatesClient implements ClientModInitializer {
     public void onInitializeClient() {
         // This entrypoint is suitable for setting up client-specific logic, such as rendering.
         DirectionText.clear();
-        DirectionText.add(Text.translatable("hud.direction.south"));
-        DirectionText.add(Text.translatable("hud.direction.southwest"));
-        DirectionText.add(Text.translatable("hud.direction.west"));
-        DirectionText.add(Text.translatable("hud.direction.northwest"));
-        DirectionText.add(Text.translatable("hud.direction.north"));
-        DirectionText.add(Text.translatable("hud.direction.northeast"));
-        DirectionText.add(Text.translatable("hud.direction.east"));
-        DirectionText.add(Text.translatable("hud.direction.southeast"));
+        for (String key : DirectionKeys.DIRECTIONS) {
+            DirectionText.add(Text.translatable(key));
+        }
 
         AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
         ModConfig = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
-        HudElementRegistry.addLast(Identifier.of("simple-coordinates", "render"), new CoordinateRenderer());
+        HudElementRegistry.addLast(Identifier.of(SimpleCoordinates.MOD_ID, "render"), new CoordinateRenderer());
 
         this.keyBinding = new ModKeyBinding();
         this.keyBinding.initialize();

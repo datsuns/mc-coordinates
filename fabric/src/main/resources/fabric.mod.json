@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "simple-coordinates",
+	"id": "simplecoordinates",
 	"version": "${version}",
 	"name": "Simple Coordinates",
 	"description": "display Coordinate on HUD",
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/datsuns/mc-coordinates"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/simple-coordinates/icon.png",
+	"icon": "assets/simplecoordinates/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -26,9 +26,9 @@
 		]
 	},
 	"mixins": [
-		"simple-coordinates.mixins.json",
+		"simplecoordinates.mixins.json",
 		{
-			"config": "simple-coordinates.client.mixins.json",
+			"config": "simplecoordinates.client.mixins.json",
 			"environment": "client"
 		}
 	],

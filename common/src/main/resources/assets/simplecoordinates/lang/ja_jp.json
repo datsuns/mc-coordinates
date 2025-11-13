@@ -1,7 +1,8 @@
 {
   "simplecoordinate.option_title": "Simple Coordinateオプション",
   "category.simplecoordinate": "Simple Coordinate",
-  "key.simplecorrdinate.visible": "表示切り替え",
+  "key.simplecoordinate.visible": "表示切り替え",
+  "key.categories.simplecoordinate": "Simple Coordinates",
   "color_name.white":        "白",
   "color_name.black":        "黒",
   "color_name.gray":         "灰色",
@@ -23,7 +24,6 @@
   "option.pos_y.title": "表示位置(縦)",
   "option.pos_xy.value": "数値: %d",
   "option.text_color.title": "文字色",
-  "option.visible.title": "表示する",
   "option.visible.title": "表示する",
   "option.show_direction.title": "方向を表示",
   "hud.direction.south": "南",

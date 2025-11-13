@@ -1,7 +1,8 @@
 {
   "simplecoordinate.option_title": "Simple Coordinate Options",
   "category.simplecoordinate": "Simple Coordinate",
-  "key.simplecorrdinate.visible": "Visible",
+  "key.simplecoordinate.visible": "Visible",
+  "key.categories.simplecoordinate": "Simple Coordinates",
   "color_name.white":        "white",
   "color_name.black":        "black",
   "color_name.gray":         "gray",

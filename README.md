@@ -7,16 +7,6 @@ simple display for Coordinates on HUD.
 
 ![capture image](./image/screenshot.png)
 
-## Setup
-
-For setup Fabric environment.
-
-Build the Fabric jar via the dedicated subproject:
-
-```
-./gradlew :fabric:build
-```
-
 ## feature
 
 * show coordination, direction, angle, pitch
