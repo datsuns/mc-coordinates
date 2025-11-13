@@ -1,7 +1,10 @@
+import com.modrinth.minotaur.dependencies.ModDependency
+
 plugins {
     id 'java-library'
     id 'maven-publish'
     id 'net.neoforged.moddev' version "${neoforge_moddev_version}"
+    id "com.modrinth.minotaur" version "2.+"
 }
 
 version = project.mod_version
@@ -134,4 +137,17 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+modrinth {
+    token = System.getenv('MODRINTH_TOKEN')
+    projectId = "${project.modrinth_project_id}"
+    versionNumber = "${project.mod_version}"
+    versionName = "v${project.mod_version}-mc${project.minecraft_version}-neoforge"
+    uploadFile = jar
+    gameVersions = [project.minecraft_version]
+    loaders = ['neoforge']
+    dependencies = [
+            new ModDependency('9s6osm5g', 'required')
+    ]
 }

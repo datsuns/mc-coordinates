@@ -41,3 +41,7 @@ subprojects {
         }
     }
 }
+
+tasks.register("modrinth") {
+    dependsOn(":fabric:modrinth", ":neoforge:modrinth")
+}
