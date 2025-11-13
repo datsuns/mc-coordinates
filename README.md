@@ -7,16 +7,26 @@ simple display for Coordinates on HUD.
 
 ![capture image](./image/screenshot.png)
 
+## Supported Loadder
+
+* [Fabric](https://fabricmc.net/)
+* [NeoForge](https://neoforged.net/)
+
 ## feature
 
 * show coordination, direction, angle, pitch
-* config by [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/) 
-   * toggle on/off
-   * rendering position
-   * text color
+* config by [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/)
+  * toggle on/off
+  * rendering position
+  * text color
 
-## dependencies 
+## dependencies (Fabric)
+
 * [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/)
+* [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
+
+## dependencies (NeoForge)
+
 * [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
 
 ## License
