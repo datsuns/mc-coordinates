@@ -142,7 +142,7 @@ tasks.withType(JavaCompile).configureEach {
 modrinth {
     token = System.getenv('MODRINTH_TOKEN')
     projectId = "${project.modrinth_project_id}"
-    versionNumber = "${project.mod_version}"
+    versionNumber = "${project.mod_version}-mc${project.minecraft_version}"
     versionName = "v${project.mod_version}-mc${project.minecraft_version}-neoforge"
     uploadFile = jar
     gameVersions = [project.minecraft_version]
