@@ -1,5 +1,8 @@
 # 変更履歴
 
+## v1.4.1 for v1.21.11
+- Minecraft v1.21.11対応
+
 ## v1.4.0 for v1.21.10
 - Minecraft v1.21.10対応
 
