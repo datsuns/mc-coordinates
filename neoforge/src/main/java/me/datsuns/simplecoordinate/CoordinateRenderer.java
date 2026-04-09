@@ -3,14 +3,15 @@ package me.datsuns.simplecoordinate;
 import me.datsuns.simplecoordinate.config.ModConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.DeltaTracker;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 
 public final class CoordinateRenderer {
     private CoordinateRenderer() {
     }
 
-    public static void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+    public static void render(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker) {
         ModConfig config = SimpleCoordinatesClient.ModConfig;
         if (config == null || !config.Visible) {
             return;
@@ -39,6 +40,6 @@ public final class CoordinateRenderer {
         int posY = config.RenderPosY;
         int color = config.TextColor.argb;
 
-        guiGraphics.drawString(client.font, fmt, posX, posY, color, false);
+        guiGraphics.text(client.font, Component.literal(fmt), posX, posY, color, false);
     }
 }

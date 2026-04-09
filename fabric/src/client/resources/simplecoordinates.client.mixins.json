@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "me.datsuns.simplecoordinate.mixin.client",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_25",
   "injectors": {
     "defaultRequire": 1
   }
