@@ -78,7 +78,7 @@ tasks.named("jar").configure {
     from(rootProject.file("LICENSE")) {
         rename { "${it}_${inputs.properties.archivesName}" }
     }
-    archiveFileName.set("simple-coordinates-${project.version}-fabric.jar")
+    archiveFileName.set("simple-coordinates-${project.version}-fabric-mc${project.minecraft_version}.jar")
 }
 
 tasks.named("sourcesJar").configure {

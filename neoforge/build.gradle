@@ -107,7 +107,7 @@ neoForge.ideSyncTask generateModMetadata
 
 tasks.named("jar").configure {
     dependsOn(copyCommonClasses)
-    archiveFileName.set("simple-coordinates-${project.version}-neoforge.jar")
+    archiveFileName.set("simple-coordinates-${project.version}-neoforge-mc${project.minecraft_version}.jar")
     from(rootProject.file("LICENSE")) {
         rename { "${it}_${project.base.archivesName.get()}" }
     }
