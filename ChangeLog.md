@@ -1,5 +1,8 @@
 # ChangeLog
 
+## v1.4.1 for v26.2
+- fetch to MC 26.2
+
 ## v1.4.1 for v26.1.2
 - fetch to MC 26.1.2
 
