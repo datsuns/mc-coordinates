@@ -42,6 +42,66 @@ subprojects {
     }
 }
 
-tasks.register("modrinth") {
-    dependsOn(":fabric:modrinth", ":neoforge:modrinth")
+tasks.register("publishModrinth", Exec) {
+    dependsOn(subprojects.collect { it.tasks.matching { it.name == "build" } })
+    group = "publishing"
+    description = "Publishes simple-coordinates (Fabric & NeoForge separately) to Modrinth via Python script"
+
+    def venvPythonWin = file(".venv/Scripts/python.exe")
+    def venvPythonUnix = file(".venv/bin/python")
+    def pythonExe = venvPythonWin.exists() ? venvPythonWin.absolutePath : (venvPythonUnix.exists() ? venvPythonUnix.absolutePath : "python")
+    def scriptPath = file("scripts/publish_modrinth.py").absolutePath
+
+    commandLine pythonExe, scriptPath
+    if (project.hasProperty("dryRun")) {
+        args "--dry-run"
+    }
+    if (project.hasProperty("token")) {
+        args "--token", project.property("token")
+    }
+    if (project.hasProperty("releaseType")) {
+        args "--release-type", project.property("releaseType")
+    }
+    if (project.hasProperty("loader")) {
+        args "--loader", project.property("loader")
+    }
 }
+
+tasks.register("publishModrinthFabric", Exec) {
+    dependsOn(subprojects.collect { it.tasks.matching { it.name == "build" } })
+    group = "publishing"
+    description = "Publishes only Fabric version to Modrinth"
+
+    def venvPythonWin = file(".venv/Scripts/python.exe")
+    def venvPythonUnix = file(".venv/bin/python")
+    def pythonExe = venvPythonWin.exists() ? venvPythonWin.absolutePath : (venvPythonUnix.exists() ? venvPythonUnix.absolutePath : "python")
+    def scriptPath = file("scripts/publish_modrinth.py").absolutePath
+
+    commandLine pythonExe, scriptPath, "--loader", "fabric"
+    if (project.hasProperty("dryRun")) args "--dry-run"
+    if (project.hasProperty("token")) args "--token", project.property("token")
+    if (project.hasProperty("releaseType")) args "--release-type", project.property("releaseType")
+}
+
+tasks.register("publishModrinthNeoForge", Exec) {
+    dependsOn(subprojects.collect { it.tasks.matching { it.name == "build" } })
+    group = "publishing"
+    description = "Publishes only NeoForge version to Modrinth"
+
+    def venvPythonWin = file(".venv/Scripts/python.exe")
+    def venvPythonUnix = file(".venv/bin/python")
+    def pythonExe = venvPythonWin.exists() ? venvPythonWin.absolutePath : (venvPythonUnix.exists() ? venvPythonUnix.absolutePath : "python")
+    def scriptPath = file("scripts/publish_modrinth.py").absolutePath
+
+    commandLine pythonExe, scriptPath, "--loader", "neoforge"
+    if (project.hasProperty("dryRun")) args "--dry-run"
+    if (project.hasProperty("token")) args "--token", project.property("token")
+    if (project.hasProperty("releaseType")) args "--release-type", project.property("releaseType")
+}
+
+tasks.register("modrinth") {
+    group = "publishing"
+    description = "Publishes Fabric and NeoForge builds to Modrinth."
+    dependsOn("publishModrinth")
+}
+
