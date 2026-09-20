@@ -37,13 +37,13 @@
 		"minecraft": "~26.3",
 		"java": ">=25",
 		"fabric-api": "*",
-		"fabric-key-mapping-api-v1": "*"
+		"fabric-key-mapping-api-v1": "*",
+		"cloth-config": ">=26.3.158"
 	},
 	"suggests": {
 		"another-mod": "*"
 	},
 	"recommends": {
-		"modmenu": ">=16.0.0-rc.1",
-		"cloth-config": ">=20.0.148"
+		"modmenu": ">=16.0.0-rc.1"
 	}
 }
