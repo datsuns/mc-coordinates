@@ -5,7 +5,6 @@ import me.datsuns.simplecoordinate.SimpleCoordinatesClient;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.KeyMapping;
-import org.lwjgl.glfw.GLFW;
 
 public class ModKeyBinding {
     private static KeyMapping Visible;
@@ -14,8 +13,8 @@ public class ModKeyBinding {
         Visible = KeyMappingHelper.registerKeyMapping(
                 new KeyMapping(
                         "key.simplecoordinate.visible",
-                        InputConstants.Type.KEYSYM,
-                        GLFW.GLFW_KEY_COMMA,
+                        InputConstants.Type.KEYBOARD,
+                        InputConstants.KEY_COMMA,
                         KeyMapping.Category.MISC
                 )
         );

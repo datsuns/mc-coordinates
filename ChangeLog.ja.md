@@ -1,5 +1,8 @@
 # 変更履歴
 
+## v1.4.1 for v26.3
+- Minecraft v26.3対応
+
 ## v1.4.1 for v26.2
 - Minecraft v26.2対応
 

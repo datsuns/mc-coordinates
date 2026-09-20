@@ -38,6 +38,12 @@ loom {
             sourceSet sourceSets.client
         }
     }
+
+    runs {
+        client {
+            vmArg "-Xmx4G"
+        }
+    }
 }
 
 dependencies {
